@@ -1,30 +1,31 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import ode #make sure you have your ode.py in the same directory
+import myode #make sure myode.py is in the same directory
 
-G = # task 2
-Msun = # task 2
+G = 
+Msun = 
 R1 = 147.1e9  # perihelion
 R2 = 152.1e9  # aphelion
 
-zvel1 = # task 1
+# Calculate zvel1 analytically and write down your steps 
+zvel1 = 
 
-def f(y):
+def diffeq(y):
     [xpos, xvel, zpos, zvel] = y # first we unpack the vector y
     r = # magnitude of Earth-Sun distance
-    xacc = # task 2 & 5
-    zacc = # task 2 & 5
-    
-    return np.array([xvel, xacc, zvel, zacc])
+    xacc = 
+    zacc = 
+    ydot = np.array([xvel, xacc, zvel, zacc])
+    return ydot
 
 
-# set up time range and time step
-dt= # task 2
-t_total = # task 3 (one year) & 5 (two hundred years). Make sure it's in the right units
-t_range = range( int(t_total/dt) )
+# Explain how you choose dt here
+dt=
+t_total = # task 4 (one year) and task 6 (two hundred years). Make sure it's in the right units
+t_range = np.arange(0, t_total, dt)
 
 # xpos xvel zpos zvel
-y0 = [ , , , ] # task 2
+y0 = [ , , , ] 
 y = y0
 x_sol = []
 z_sol = []
@@ -33,8 +34,7 @@ EPot = []
 Etot = []
 
 for t in t_range:
-    # task 3. Choose your ODE solver to integrate the equation of motion
-    # task 4. Define the energies that need to be plotted and calculate/store them here, to be plotted later.
+
 
 
 
@@ -49,7 +49,7 @@ ax.text(-R1, 0, 'Perihelion', horizontalalignment='left', verticalalignment='bot
 ax.plot( R2, 0,'k.')
 ax.text( R2, 0, 'Aphelion', horizontalalignment='right', verticalalignment='bottom')
 
-ax.plot( ,  ,'b-') # task 3. Plot your results here
+ax.plot( ,  ,'b-') 
 
 ax.set_ylabel('y position')
 ax.set_xlabel('x position')
@@ -57,4 +57,3 @@ ax.set_aspect('equal', 'box')
 
 plt.show()
 
-#Extra credits: optional animation section
